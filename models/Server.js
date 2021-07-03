@@ -17,7 +17,10 @@ class Server {
 
         // Configuraciones del Socket
         // Configuración del socket server
-        this.io = socketio(this.server, {/* Configuraciones */});
+        this.io = socketio(this.server, {cors: {
+            origin: "*",
+            methods: ["GET", "POST"]
+          }});
     }
 
     middlewares() {
